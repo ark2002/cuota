@@ -1,0 +1,8 @@
+.base-widget__container {
+    width: 100%;
+    gap: 2rem;
+}
+
+.base-widget-search__wrapper {
+    width: 100%;
+}
