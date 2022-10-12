@@ -1,0 +1,19 @@
+.base-widget__invited-item {
+    width: 100%;
+    gap: 1rem;
+}
+
+.invited-user__permission {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.invited-user__img {
+    width: 3.2rem;
+    border-radius: 50%;
+}
+
+.material-icons.expand__icon {
+    font-size: 2rem;
+    color: var(--text-color-light2);
+}
