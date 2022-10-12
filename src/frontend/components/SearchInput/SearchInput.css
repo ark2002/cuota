@@ -1,0 +1,30 @@
+.base-widget__search-container {
+    width: 100%;
+    border: 1px solid var(--accent-color3);
+}
+
+.base-widget__search-container:focus-within {
+    border: 1px solid var(--accent-color4);
+}
+
+.search-container__choices {
+    margin-left: auto;
+    gap: 1rem;
+}
+
+.search__input {
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    padding: 5px;
+}
+
+.invite__btn {
+    margin-left: auto;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-left: 1px solid var(--accent-color3);
+    font-weight: 600;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
