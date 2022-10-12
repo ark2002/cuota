@@ -1,0 +1,32 @@
+.base-widget__top {
+    width: 100%;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.material-icons.public__icon {
+    font-size: 3rem;
+    color: var(--text-color-light2);
+}
+
+.base-widget__top-details {
+    gap: 2px;
+}
+
+.widget__text {
+    font-size: 1.2rem;
+}
+
+.widget__text-large {
+    font-size: 1.4rem;
+}
+
+.widget__text-small {
+    font-size: 1.2rem;
+    color: var(--text-color-light2);
+}
+
+.bold {
+    font-weight: 400;
+    color: var(--accent-color1);
+}
