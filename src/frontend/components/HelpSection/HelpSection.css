@@ -1,0 +1,25 @@
+.base-widget__bottom {
+    width: 100%;
+    padding-top: 1rem;
+    border-top: 1px solid var(--accent-color3);
+}
+
+.base-widget__help {
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.material-icons.help__icon {
+    font-size: 1.5rem;
+    color: var(--text-color-light2);
+}
+
+.base-widget__copy-link {
+    cursor: pointer;
+    gap: 2px;
+    margin-left: auto;
+}
+
+.base-widget__copy-link>p {
+    font-weight: 600;
+}
