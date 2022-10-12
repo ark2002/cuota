@@ -1,0 +1,15 @@
+.main-share__btn {
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    border: 1px solid var(--text-color-light1);
+    color: var(--background-color-light2);
+    background-color: var(--accent-color1);
+    cursor: pointer;
+}
+
+.material-icons.share__icon {
+    font-size: 1.2rem;
+    font-weight: 1000;
+}
