@@ -1,0 +1,14 @@
+.suggested-item__container {
+    gap: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.suggested-item__container:hover {
+    background-color: var(--accent-color3);
+}
+
+.user__name {
+    font-weight: 600;
+}
