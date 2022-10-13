@@ -4,59 +4,33 @@
     "name": "John Doe",
     "profileType": "user",
     "profileImg": "https://randomuser.me/api/portraits/men/52.jpg",
-    "access": "No access"
+    "access": "No access",
+    "invited": false
   },
   {
     "id": 2,
     "name": "Silas Maitland",
     "profileType": "user",
     "profileImg": "https://randomuser.me/api/portraits/men/32.jpg",
-    "access": "No access"
+    "access": "No access",
+    "invited": false
   },
   {
     "id": 3,
-    "name": "Rigby Rudolph",
-    "profileType": "user",
-    "profileImg": "https://randomuser.me/api/portraits/men/12.jpg",
-    "access": "No access"
-  },
-  {
-    "id": 4,
-    "name": "Rigby Rudolph",
-    "profileType": "user",
-    "profileImg": "https://randomuser.me/api/portraits/men/47.jpg",
-    "access": "No access"
-  },
-  {
-    "id": 5,
     "name": "OSlash",
     "profileType": "group",
     "memberCount": 25,
     "profileImg": "https://global-uploads.webflow.com/60c0cec90f5782a19af55867/61516da7bff77f7a1bdbb25e_32%20x%2032.png",
-    "access": "No access"
+    "access": "No access",
+    "invited": true
   },
   {
-    "id": 6,
+    "id": 4,
     "name": "Accounts",
     "profileType": "group",
     "memberCount": 12,
     "profileImg": "https://i.pinimg.com/564x/bf/e5/a1/bfe5a14e34b2827a4c762ffb14478c10.jpg",
-    "access": "No access"
-  },
-  {
-    "id": 7,
-    "name": "Science",
-    "profileType": "group",
-    "memberCount": 19,
-    "profileImg": "https://i.pinimg.com/564x/a9/3b/26/a93b26987e277556944ed89915c33342.jpg",
-    "access": "No access"
-  },
-  {
-    "id": 8,
-    "name": "History",
-    "profileType": "group",
-    "memberCount": 19,
-    "profileImg": "https://i.pinimg.com/564x/a5/18/72/a518728a333d00389efd451ca855269c.jpg",
-    "access": "No access"
+    "access": "No access",
+    "invited": false
   }
 ]
