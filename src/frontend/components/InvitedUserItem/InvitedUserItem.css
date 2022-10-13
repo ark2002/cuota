@@ -8,7 +8,7 @@
     cursor: pointer;
 }
 
-.invited-user__img {
+.user__img {
     width: 3.2rem;
     border-radius: 50%;
 }
