@@ -1,19 +1,18 @@
 import "./InvitedUserItem.css";
 
-const InvitedUserItem = () => {
+const InvitedUserItem = ({ user }) => {
+  const { id, name, profileType, memberCount, profileImg, access } = user;
   return (
     <div className="base-widget__invited-item flex__row-center">
-      <img
-        src="https://global-uploads.webflow.com/60c0cec90f5782a19af55867/61516da7bff77f7a1bdbb25e_32%20x%2032.png"
-        alt="oslash__logo"
-        className="invited-user__img"
-      />
+      <img src={profileImg} alt="oslash__logo" className="invited-user__img" />
       <div className="invited-user__details flex__column">
-        <p className="widget__text-large bold">Everyone at OSlash</p>
-        <p className="widget__text-small">25 workspace members</p>
+        <p className="widget__text-large bold">{name}</p>
+        {profileType === "group" && (
+          <p className="widget__text-small">{memberCount} workspace members</p>
+        )}
       </div>
       <div className="invited-user__permission flex__row-center">
-        <p className="widget__text-small">No access</p>
+        <p className="widget__text-small">{access}</p>
         <span className="material-icons expand__icon">expand_more</span>
       </div>
     </div>
