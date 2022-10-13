@@ -30,3 +30,7 @@
     font-weight: 400;
     color: var(--accent-color1);
 }
+
+.base-widget__switch{
+    margin-left: auto;
+}

@@ -1,3 +1,4 @@
+import { PublishSwitch } from "../PublishSwitch/PublishSwitch";
 import "./PublishSection.css";
 
 const PublishSection = () => {
@@ -7,6 +8,9 @@ const PublishSection = () => {
       <div className="base-widget__top-details flex__column">
         <p className="widget__text-large bold">Share to web</p>
         <p className="widget__text-small">Publish and share link with anyone</p>
+      </div>
+      <div className="base-widget__switch">
+        <PublishSwitch />
       </div>
     </div>
   );
