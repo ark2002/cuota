@@ -9,14 +9,13 @@ const InviteProvider = ({ children }) => {
     dataList: [],
     userList: [],
     groupList: [],
-    selectedList:[],
-    searchInput:"",
+    selectedList: [],
+    searchInput: "",
   });
 
   useEffect(() => {
     (async () => {
       const { data } = await axios.get("database.json");
-      console.log(data);
       dispatchList({ type: "initialSet", payload: data });
     })();
   }, []);
