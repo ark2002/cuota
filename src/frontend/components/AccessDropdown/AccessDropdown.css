@@ -1,0 +1,25 @@
+.access__dropdown {
+    position: absolute;
+    width: 20rem;
+    background-color: var(--background-color-light2);
+    top: 3rem;
+    right: 0;
+    box-shadow: #00000059 0px 5px 15px;
+    padding: 1rem;
+    z-index: 2;
+}
+
+.access-dropdown__item {
+    padding: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.access-dropdown__item:hover {
+    background-color: var(--accent-color3);
+}
+
+.no-access,
+.delete {
+    color: #ff0000;
+}
