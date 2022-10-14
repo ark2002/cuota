@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useInvite } from "../../context/InviteContext";
+import { useOnClickOutside } from "../../hooks/onClickOutsideHook";
 import { HelpSection } from "../HelpSection/HelpSection";
 import { SearchInput } from "../SearchInput/SearchInput";
 import { SuggestedUserSection } from "../SuggestedUserSection/SuggestedUserSection";
@@ -7,13 +8,15 @@ import "./SearchWidget.css";
 
 const SearchWidget = ({ isWidget, setIsWidget }) => {
   const [search, setSearch] = useState("");
+  const ref = useRef();
+  useOnClickOutside(ref, () => setIsWidget(""));
 
   const {
     list: { userList, groupList },
   } = useInvite();
 
   return (
-    <div className="search-widget__container flex__column-center">
+    <div className="search-widget__container flex__column-center" ref={ref}>
       <SearchInput
         isWidget={isWidget}
         setIsWidget={setIsWidget}

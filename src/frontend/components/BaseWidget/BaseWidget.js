@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useInvite } from "../../context/InviteContext";
+import { useOnClickOutside } from "../../hooks/onClickOutsideHook";
 import { HelpSection } from "../HelpSection/HelpSection";
 import { InvitedUsersSection } from "../InvitedUsersSection/InvitedUsersSection";
 import { PublishSection } from "../PublishSection/PublishSection";
@@ -13,12 +14,15 @@ const BaseWidget = ({ isWidget, setIsWidget }) => {
     dispatchList,
   } = useInvite();
 
+  const ref = useRef();
+  useOnClickOutside(ref, () => setIsWidget(""));
+
   useEffect(() => {
     setInviteList(dataList.filter((user) => user.invited));
   }, [dataList]);
 
   return (
-    <div className="base-widget__container flex__column-center">
+    <div className="base-widget__container flex__column-center" ref={ref}>
       <PublishSection />
       <div
         onClick={() => {

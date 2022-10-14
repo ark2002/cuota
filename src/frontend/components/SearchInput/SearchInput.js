@@ -47,7 +47,11 @@ const SearchInput = ({ isWidget, setIsWidget }) => {
           </div>
         )}
         {showList && (
-          <AccessDropdown setIsAccess={setIsAccess} isWidget={isWidget} />
+          <AccessDropdown
+            isAccess={isAccess}
+            setIsAccess={setIsAccess}
+            isWidget={isWidget}
+          />
         )}
         <button
           className="invite__btn bold"

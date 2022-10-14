@@ -1,8 +1,17 @@
+import { useRef } from "react";
 import { useInvite } from "../../context/InviteContext";
+import { useOnClickOutside } from "../../hooks/onClickOutsideHook";
 import "./AccessDropdown.css";
 
-const AccessDropdown = ({ setIsAccess, name, isWidget }) => {
+const AccessDropdown = ({ isAccess, setIsAccess, name, isWidget }) => {
   const accessArray = ["Full access", "Can Edit", "Can View", "No access"];
+  const ref = useRef();
+
+  useOnClickOutside(ref, () =>
+    isWidget === "search"
+      ? setIsAccess({ ...isAccess, showList: false })
+      : setIsAccess(false)
+  );
 
   const { dispatchList } = useInvite();
 
@@ -19,7 +28,7 @@ const AccessDropdown = ({ setIsAccess, name, isWidget }) => {
   };
 
   return (
-    <div className="access__dropdown flex__column">
+    <div className="access__dropdown flex__column" ref={ref}>
       {accessArray.map((access) => (
         <p
           key={access}
