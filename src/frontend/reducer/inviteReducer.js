@@ -34,39 +34,54 @@ export const inviteReducer = (state, action) => {
     case "select":
       return {
         ...state,
+        selectedList: [
+          ...state.selectedList,
+          state.dataList.find((user) => user.name === payload),
+        ],
         userList: state.dataList.filter(
           (user) =>
             user.profileType === "user" &&
             user.name !== payload &&
+            state.selectedList.indexOf(user) === -1 &&
             user.invited === false
         ),
         groupList: state.dataList.filter(
           (user) =>
             user.profileType === "group" &&
             user.name !== payload &&
+            state.selectedList.indexOf(user) === -1 &&
             user.invited === false
         ),
-        selectedList: state.dataList.filter((user) => user.name === payload),
         searchInput: "",
       };
     case "deselect":
       return {
         ...state,
-        userList: state.dataList.filter(
-          (user) =>
-            user.profileType === "user" &&
-            user.invited === false &&
-            user.name.toLowerCase().includes(state.searchInput.toLowerCase())
-        ),
-        groupList: state.dataList.filter(
-          (user) =>
-            user.profileType === "group" &&
-            user.invited === false &&
-            user.name.toLowerCase().includes(state.searchInput.toLowerCase())
-        ),
-        selectedList: state.selectedList.filter(
-          (user) => user.name !== payload
-        ),
+        userList: [
+          ...state.dataList.filter(
+            (user) =>
+              user.profileType === "user" &&
+              user.invited === false &&
+              state.selectedList.indexOf(user) === -1 &&
+              user.name.toLowerCase().includes(state.searchInput.toLowerCase())
+          ),
+          ...state.dataList.filter(
+            (user) => user.profileType === "user" && user === payload
+          ),
+        ],
+        groupList: [
+          ...state.dataList.filter(
+            (user) =>
+              user.profileType === "group" &&
+              user.invited === false &&
+              state.selectedList.indexOf(user) === -1 &&
+              user.name.toLowerCase().includes(state.searchInput.toLowerCase())
+          ),
+          ...state.dataList.filter(
+            (user) => user.profileType === "group" && user === payload
+          ),
+        ],
+        selectedList: state.selectedList.filter((user) => user !== payload),
       };
     case "invited":
       return {
