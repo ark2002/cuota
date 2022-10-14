@@ -85,7 +85,6 @@ export const inviteReducer = (state, action) => {
       };
     case "invited":
       return {
-        ...state,
         dataList: state.dataList.map((user) =>
           state.selectedList.indexOf(user) === -1
             ? { ...user }
@@ -98,12 +97,13 @@ export const inviteReducer = (state, action) => {
           (user) => user.profileType === "group" && user.invited === false
         ),
         selectedList: [],
+        searchInput: "",
       };
     case "uninvite":
       return {
         ...state,
         dataList: state.dataList.map((user) =>
-          user.name === payload.name
+          user.name === payload
             ? { ...user, access: "no access", invited: false }
             : { ...user }
         ),
@@ -122,6 +122,18 @@ export const inviteReducer = (state, action) => {
             ? { ...user, access: payload.access }
             : { ...user }
         ),
+      };
+    case "reset":
+      return {
+        ...state,
+        userList: state.dataList.filter(
+          (user) => user.profileType === "user" && user.invited === false
+        ),
+        groupList: state.dataList.filter(
+          (user) => user.profileType === "group" && user.invited === false
+        ),
+        selectedList: [],
+        searchInput: "",
       };
     default:
       return state;
