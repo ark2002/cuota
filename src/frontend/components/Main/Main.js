@@ -6,7 +6,6 @@ import "./Main.css";
 
 const Main = () => {
   const [isWidget, setIsWidget] = useState("search");
-
   return (
     <div className="main__container">
       <ShareButton isWidget={isWidget} setIsWidget={setIsWidget} />
