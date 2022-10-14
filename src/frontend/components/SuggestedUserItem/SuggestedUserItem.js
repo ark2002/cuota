@@ -3,8 +3,7 @@ import "./SuggestedUserItem.css";
 
 const SuggestedUserItem = ({ user }) => {
   const { name, profileImg } = user;
-  const { list, dispatchList } = useInvite();
-  console.log(list);
+  const { dispatchList } = useInvite();
   return (
     <div
       className="suggested-item__container flex__row-center"

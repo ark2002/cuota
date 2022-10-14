@@ -6,7 +6,7 @@ const SuggestedUserSection = ({ type, list }) => {
     <div className="search-widget__suggestions flex__column">
       <p className="widget__text-large suggestions__heading">Select a {type}</p>
       {list.map((user) => (
-        <SuggestedUserItem user={user} />
+        <SuggestedUserItem user={user} key={user.id} />
       ))}
     </div>
   );
