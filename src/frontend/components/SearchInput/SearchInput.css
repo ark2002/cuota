@@ -2,6 +2,7 @@
     width: 100%;
     border: 1px solid var(--accent-color3);
     border-radius: 5px;
+    gap: 5px;
 }
 
 .base-widget__search-container:focus-within {
@@ -11,23 +12,60 @@
 .search-container__choices {
     margin-left: auto;
     gap: 1rem;
+    min-width: fit-content;
+    align-self: flex-start;
 }
 
 .search__input {
+    min-width: 0;
+    width: 65%;
+    max-width: 100%;
     border: none;
     outline: none;
     font-size: 1.4rem;
     padding: 5px;
     border-radius: 5px;
+    flex-grow: 2;
 }
 
 .invite__btn {
     margin-left: auto;
     padding: 0.5rem 1.5rem;
     border: none;
-    border-left: 1px solid var(--accent-color3);
+    border: 1px solid var(--accent-color3);
     font-weight: 600;
     font-size: 1.4rem;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.search-container__left {
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-left: 5px;
+}
+
+.selected-user__container {
+    min-width: fit-content;
+    margin-left: 5px;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.selected-user__chip {
+    min-width: fit-content;
+    padding: 3px 5px;
+    gap: 2px;
+    background-color: var(--accent-color3);
+    color: var();
+    border-radius: 5px;
+}
+
+.widget__text-small {
+    min-width: fit-content;
+}
+
+.material-icons.chip__close {
+    font-size: 1.4rem;
+    cursor: pointer;
 }
