@@ -10,6 +10,7 @@ const BaseWidget = ({ isWidget, setIsWidget }) => {
   const [inviteList, setInviteList] = useState([]);
   const {
     list: { dataList },
+    dispatchList,
   } = useInvite();
 
   useEffect(() => {
@@ -20,7 +21,10 @@ const BaseWidget = ({ isWidget, setIsWidget }) => {
     <div className="base-widget__container flex__column-center">
       <PublishSection />
       <div
-        onClick={() => setIsWidget("search")}
+        onClick={() => {
+          setIsWidget("search");
+          dispatchList({ type: "reset" });
+        }}
         className="base-widget-search__wrapper"
       >
         <SearchInput isWidget={isWidget} inviteList={inviteList} />
