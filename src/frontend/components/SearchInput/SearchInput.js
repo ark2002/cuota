@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { useInvite } from "../../context/InviteContext";
+import { SelectedUserChip } from "../SelectedUserChip/SelectedUserChip";
 import "./SearchInput.css";
 
 const SearchInput = ({ isWidget }) => {
@@ -12,17 +12,7 @@ const SearchInput = ({ isWidget }) => {
     <div className="base-widget__search-container flex__row">
       <div className="search-container__left flex__row-center">
         {selectedList.map((user) => (
-          <div className="selected-user__chip flex__row-center" key={user.id}>
-            <p className="widget__text-small">{user.name}</p>
-            <span
-              className="material-icons chip__close"
-              onClick={() =>
-                dispatchList({ type: "deselect", payload: user })
-              }
-            >
-              close
-            </span>
-          </div>
+          <SelectedUserChip user={user} />
         ))}
         <input
           className="search__input"
