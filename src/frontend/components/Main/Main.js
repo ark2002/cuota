@@ -5,7 +5,7 @@ import { ShareButton } from "../ShareButton/ShareButton";
 import "./Main.css";
 
 const Main = () => {
-  const [isWidget, setIsWidget] = useState("search");
+  const [isWidget, setIsWidget] = useState("");
   return (
     <div className="main__container">
       <ShareButton isWidget={isWidget} setIsWidget={setIsWidget} />
@@ -14,7 +14,7 @@ const Main = () => {
           {isWidget === "base" ? (
             <BaseWidget isWidget={isWidget} setIsWidget={setIsWidget} />
           ) : (
-            <SearchWidget isWidget={isWidget} />
+            <SearchWidget isWidget={isWidget} setIsWidget={setIsWidget} />
           )}
         </div>
       )}
