@@ -6,6 +6,7 @@
 .invited-user__permission {
     margin-left: auto;
     cursor: pointer;
+    position: relative;
 }
 
 .user__img {
