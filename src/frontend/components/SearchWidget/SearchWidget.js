@@ -8,12 +8,17 @@ import "./SearchWidget.css";
 
 const SearchWidget = ({ isWidget, setIsWidget }) => {
   const [search, setSearch] = useState("");
-  const ref = useRef();
-  useOnClickOutside(ref, () => setIsWidget(""));
 
   const {
     list: { userList, groupList },
+    dispatchList,
   } = useInvite();
+
+  const ref = useRef();
+  useOnClickOutside(ref, () => {
+    setIsWidget("");
+    dispatchList({ type: "reset" });
+  });
 
   return (
     <div className="search-widget__container flex__column-center" ref={ref}>
